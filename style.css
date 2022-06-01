@@ -22,6 +22,7 @@ body{
     flex-direction: column;
     padding: 10px;
     word-wrap: break-word;
+    word-break: break-all;
 }
 
 .calculator_output .previous_output{
@@ -126,6 +127,7 @@ body{
 
 .btn_group >button:hover{
     background-color: #fff;
+    cursor: pointer;
 }
 
 .calculator_keys{
@@ -202,6 +204,7 @@ body{
     background-color: #434A59;
     color:#fff;
     text-transform: uppercase;
+    cursor: pointer;
 }
 .resetBtn:hover{
     background-color: #A2B2E1;
@@ -212,6 +215,7 @@ body{
     color:#fff;
     font-size:28px !important;
     text-transform: uppercase; 
+    cursor: pointer;
 }
 .minus:hover{
     background-color: #F96B5B;
