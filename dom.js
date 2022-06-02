@@ -48,7 +48,7 @@ class Calculator{
             computation = prev -current
             break;
         
-        case '*':
+        case 'x':
             computation = prev * current
             break;
 
@@ -64,14 +64,38 @@ class Calculator{
    this.previousOperand=''
 }
 
+//   getDisplayNumber(number){
+//       let stringNumber = number.toString();
+//       let integerDigits = parseFloat(stringNumber.split('.')[0]);
+//       let decimalDigits = stringNumber.split('.')[1];
+
+//       let integerDisplay
+
+//       if(isNaN(integerDigits)){
+//           integerDigits=''
+//       }else{
+//           integerDisplay=integerDigits.toLocaleString('en',{maximumFractionDigits:0})
+//       }
+
+//       if(decimalDigits != null){
+//           return `${integerDisplay}.${decimalDigits}`
+//       }else{
+//           return integerDisplay
+//       }
+//   }
 
   
    updateText(){
-       this.currentTextElement.innerHTML=this.currentOperand;
-       this.previousTextElement.innerHTML=this.previousOperand;
+       this.currentTextElement.innerText= this.currentOperand;
+       if(this.operation != null){
+           this.previousTextElement.innerText=`${this.previousOperand} ${this.operation}`;
+           
+       }
+       else{
+           this.previousTextElement.innerText=''
+       }
+    
    }
-
-
   
   }
 

@@ -17,6 +17,7 @@ body{
 .calculator_output{
     grid-column: 1/-1;
     display: flex;
+    /* height: 50px; */
     align-items: flex-end;
     justify-content: space-around;
     flex-direction: column;
@@ -47,17 +48,18 @@ body{
 }
 
 .title{
-    font-size: 50px;
+    font-size: 30px;
     color: #fff;
     position: relative;
-    top: -20px;
+    font-weight: 550;
+    top: -10px;
 }
 
 .theme_section > h3{
     position: relative;
     left: -20px;
     color: #fff;
-    font-size:15px;
+    font-size:11px;
     text-transform: uppercase;
 }
 .range{
@@ -65,6 +67,7 @@ body{
     /* justify-content: space-between; */
     position: relative;
     margin-left: 10px;
+    font-size: 11px;
     top: -3px;
     color: #fff;
 }
@@ -78,7 +81,7 @@ body{
     top: -23px;
 }
 .outer{
-    width: 95px !important;
+    width: 75px !important;
     height: 30px;
     padding: 5px;
     border: white;
@@ -228,3 +231,140 @@ body{
     margin-bottom: 30px;
 }
 
+
+@media (min-width:320px) and (max-width:480px){
+   /* .calculator-container{} */
+
+   .calculator_output{
+      max-width: 320px;
+      margin: 0 auto;
+   } 
+   .banner{
+       margin-left: 35px;
+       margin-right: 35px;
+   } 
+   .banner >h3{
+       font-size:50px;
+       position: relative;
+       top: -20px;
+   }
+   .theme_section >h3{
+       font-size: 15px;
+   }
+
+   .calculator_keys{
+       margin-top: 50px;
+       max-width: 320px;
+       margin: 0 auto;
+       position: relative;
+       top:35px
+   }
+
+   .calculator_keys > button{
+      font-size: 5px;
+   }
+
+   .btn_group{
+       display: flex;
+   }
+   
+   .seven{
+       position: relative;
+       top: -11px;
+       left: -15px;
+   }
+   .eight{
+       position: relative;
+       top:18px;
+       left: -22px;
+   }
+
+   .nine{
+    position: relative;
+    top:18px;
+    left: -23px;
+   }
+   .delt{
+    position: relative;
+    top:18px;
+    left: -20px; 
+   }
+   
+   .four{
+    position: relative;
+    top:-10px;
+    left: -15px;
+   }
+
+   .five{
+    position: relative;
+    top:20px;
+    left: -22px;
+
+   }
+
+   .six{
+    position: relative;
+    top:18px;
+    left: -23px;
+   }
+   .plus{
+    position: relative;
+    top:18px;
+    left: -20px; 
+   }
+
+   .one{
+    position: relative;
+    top:-10px;
+    left: -15px;
+   }
+   .two{
+    position: relative;
+    top:20px;
+    left: -22px;
+   }
+   .three{
+    position: relative;
+    top:18px;
+    left: -23px; 
+   }
+
+   .takeaway{
+    position: relative;
+    top:18px;
+    left: -20px; 
+   }
+   .dot{
+    position: relative;
+    top:-10px;
+    left: -15px; 
+   }
+   .zero{
+    position: relative;
+    top:20px;
+    left: -22px; 
+   }
+   .slash{
+    position: relative;
+    top:18px;
+    left: -23px; 
+   }
+   .times{
+    position: relative;
+    top:18px;
+    left: -20px; 
+   }
+
+   .resetBtn{
+      width: 8rem; 
+      position: relative;
+      left: -15px;
+   }
+   .minus{
+       width: 7.2rem;
+       position: relative;
+      
+       left: -20px;
+   }
+}
