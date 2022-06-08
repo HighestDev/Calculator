@@ -14,6 +14,10 @@ body{
 
 }
 
+/* .calculator-container{
+    background-color: red;
+    
+} */
 .calculator_output{
     grid-column: 1/-1;
     display: flex;
@@ -63,6 +67,42 @@ body{
     font-size:11px;
     text-transform: uppercase;
 }
+
+.eight{
+    position: relative;
+    left: -5px;
+}
+.five{
+    position: relative;
+    left: -5px;
+}
+
+.two{
+    position: relative;
+    left: -5px;
+}
+
+.zero{
+    position: relative;
+    left: -5px;
+}
+.nine{
+    position: relative;
+    left: -5px;
+}
+.six{
+    position: relative;
+    left: -5px;
+}
+.three{
+    position: relative;
+    left: -5px;
+}
+
+.slash{
+    position: relative;
+    left: -5px;
+}
 .range{
     display:flex !important;
     /* justify-content: space-between; */
@@ -98,7 +138,24 @@ body{
     border-radius: 20px;
     background-color: #D03F2F;
       
+}
 
+.hovers:hover{
+    background-color:#8631AF!important;
+    cursor: pointer;
+    /* color:blue !important; */
+}
+
+.hov:hover{
+    background-color: #fff !important;
+   /* color:red !important; */
+   cursor: pointer;
+}
+
+.hov2:hover{
+    background-color: #fff !important;
+    color:#36362C !important;
+    cursor: pointer;
 }
 
 .calculator-container{
@@ -108,7 +165,6 @@ body{
     max-height: auto;
     margin: 0 auto;
     /* border: 1px solid red; */
-   
 }
 
 .delBtn{
@@ -119,8 +175,16 @@ body{
 }
 
 .delBtn:hover{
-    background-color: #A2B2E1 !important;
+
+    cursor: pointer ;
 }
+
+/* .createDelBtn:hover{
+    background-color: #A2B2E1 !important;
+    cursor: pointer !important;
+} */
+
+
 
 .btn_group >button{
    font-size:30px;
@@ -137,10 +201,10 @@ body{
    border-right: none;
 }
 
-.btn_group >button:hover{
+/* .btn_group >button:hover{
     background-color: #fff;
     cursor: pointer;
-}
+} */
 
 .calculator_keys{
    padding: 5px 0px 5px 25px;
@@ -227,10 +291,16 @@ body{
     background-color: #A2B2E1;
 }
 
+.loadHover:hover{
+    background-color: #A2B2E1 !important;
+    cursor: pointer !important;
+}
+
 .stBtn{
     background-color: #647198 !important;
     border-bottom: 5px solid #414e73 !important;
 }
+
 
 .minus{
     background-color: #D03F2F;
@@ -341,6 +411,9 @@ body{
     position: relative;
     top:18px;
     left: -20px; 
+   }
+   .delt:hover{
+
    }
    
    .four{

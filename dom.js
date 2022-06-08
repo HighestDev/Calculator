@@ -1,3 +1,5 @@
+
+
 class Calculator{
 
     constructor(previousTextElement,currentTextElement){
@@ -64,29 +66,9 @@ class Calculator{
    this.previousOperand=''
 }
 
-//   getDisplayNumber(number){
-//       let stringNumber = number.toString();
-//       let integerDigits = parseFloat(stringNumber.split('.')[0]);
-//       let decimalDigits = stringNumber.split('.')[1];
 
-//       let integerDisplay
-
-//       if(isNaN(integerDigits)){
-//           integerDigits=''
-//       }else{
-//           integerDisplay=integerDigits.toLocaleString('en',{maximumFractionDigits:0})
-//       }
-
-//       if(decimalDigits != null){
-//           return `${integerDisplay}.${decimalDigits}`
-//       }else{
-//           return integerDisplay
-//       }
-//   }
-
-  
    updateText(){
-       this.currentTextElement.innerText= this.currentOperand;
+       this.currentTextElement.innerText= this.currentOperand.toLocaleString("en-US");
        if(this.operation != null){
            this.previousTextElement.innerText=`${this.previousOperand} ${this.operation}`;
            
@@ -116,6 +98,12 @@ let innerKeys = document.querySelector('.calculator_keys')
 let allButtons = document.querySelectorAll('[all_button ]');
 let moveColor = document.querySelectorAll('[edit_button]');
 let ball = document.querySelector('[capture_ball]');
+let btnHovers = document.querySelectorAll('[btn_hover]');
+let title = document.querySelector('.title');
+let createDelHover = document.querySelector('.delt');
+
+
+
 
 let moveBy=1.3;
 let set=0;
@@ -159,13 +147,13 @@ delBtn.addEventListener('click',()=>{
 
 themeContainer.addEventListener('click',(e)=>{
 
-    if(e.offsetX <= 11 && e.offsetX >=5){
+    if(e.offsetX <= 11 && e.offsetX >=4){
         
         document.body.style.backgroundColor="#3a4663";
             //    themeBtn.style.backgroundColor="#d03f2f";
               ball.style.left= set +'rem';
               ball.style.backgroundColor="#d03f2f"
-               ouputContainer.style.backgroundColor='#242D44';
+               ouputContainer.style.backgroundColor='#181f33';
                
                headerFontColor.forEach(item=>{
                    item.style.color="#fff"
@@ -173,19 +161,26 @@ themeContainer.addEventListener('click',(e)=>{
                innerKeys.style.backgroundColor="#242d44"
                console.log(e.offsetX)
               
+               btnHovers.forEach(item=>{
+                item.classList.add('hov')
+               })
+
                allClearBtn.classList.remove('select1')
                delBtn.classList.remove('select1')
                equalsBtn.classList.remove('equalBtn')
 
                moveColor.forEach(item=>{
                 item.classList.remove('move')
-            })
+                })
+
                allClearBtn.classList.remove('move_more');
-               delBtn.classList.remove('move_more')
-       
+               delBtn.classList.remove('move_more')    
                equalsBtn.classList.remove('move_more_eq');
+               createDelHover.classList.add('createDelBtn')
         
     }
+
+
 
     else if(e.offsetX <=43 && e.offsetX >=30){
 
@@ -217,7 +212,14 @@ themeContainer.addEventListener('click',(e)=>{
                 delBtn.classList.remove('move_more')
 
                 equalsBtn.classList.remove('move_more_eq')
-                console.log(e.offsetX)
+
+
+                btnHovers.forEach(item=>{
+                    item.classList.add('hov')
+                })
+
+
+
            }
 
     else if(e.offsetX <=62 && e.offsetX >=49){
@@ -241,25 +243,74 @@ themeContainer.addEventListener('click',(e)=>{
         delBtn.classList.add('move_more')
 
         equalsBtn.classList.add('move_more_eq');
+
+        btnHovers.forEach(item=>{
+            item.classList.remove('hov')
+        })
+        btnHovers.forEach(item=>{
+            item.classList.add('hovers')
+        })
+
    }
 
-           else{
-               console.log(e.offsetX)
-           }
-
-
+        
 })
 
+let firstBackground="#3a4663;"
+let firstKeys="#242d44;"
 
-// ball.addEventListener('click',(e)=>{
-//     if(e.offsetX <=10 && e.offsetX >=5){
+let secondBackground="#e6e6e6"
+let secondKeys="#d2cdcd"
 
-//         ball.style.left=moveBy+'rem';
-//         ball.style.backgroundColor="#FF8A38"
-//     }else{
-//         console.log(e.offsetX+'too bad keep going')
-//     }
+let thirdBackground="#180c2a"
+let thirdKeys="#1f1236"
+
+
+
+function reload(){
+    btnHovers.forEach(item=>{
+        item.classList.add('hov')
+    })
+
+    // delBtn.classList.add('loadHover') 
+}
+
+
+
+// document.addEventListener('mouseenter',(e)=>{
+//    if(document.body.backgroundColor =firstBackground){
+//        btnHovers.forEach(item=>{
+//            item.classList.add('hovers')
+//        })
+//    }else if(document.body.backgroundColor !== secondBackground){
+//        btnHovers.forEach(item=>{
+//            item.classList.add('range')
+//            item.classList.remove('hovers')
+//        })
+//    }else if(document.body.backgroundColor != thirdBackground){
+//        btnHovers.forEach(item=>{
+//            item.classList.add('kush')
+//        })
+//    }
+
+//    return
 // })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
