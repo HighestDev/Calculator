@@ -37,6 +37,16 @@ body{
 
 }
 
+.defaultColor{
+    background-color: #3a4663 !important;
+}
+.secondTheme{
+    background-color: #e6e6e6;
+}
+.thirdTheme{
+    background-color: #180c2a;
+}
+
 .calculator_output .current_output{
     color: #fff;
     font-size: 2.5rem;
@@ -373,6 +383,9 @@ body{
    }
    .theme_section >h3{
        font-size: 15px;
+   }
+   .title{
+       font-size: 32px !important;
    }
 
    .calculator_keys{

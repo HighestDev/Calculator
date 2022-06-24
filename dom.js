@@ -1,90 +1,8 @@
 
-
-class Calculator{
-
-    constructor(previousTextElement,currentTextElement){
-        this.previousTextElement=previousTextElement;
-        this.currentTextElement=currentTextElement;
-        this.clear();
-    }
-  
-    clear(){
-       this.previousOperand = '';
-       this.currentOperand  =  '';
-       this.operation = undefined;
-    }
-  
-    delete(){
-      this.currentOperand = this.currentOperand.toString().slice(0,-1)
-    }
-  
-   appendText(number){
-       if(number === '.' && this.currentOperand.includes('.'))return
-       this.currentOperand= this.currentOperand.toString() + number.toString();
-  
-   }
-
-   chooseOperation(operation){
-    if(this.currentOperand === '') return
-    if(this.previousOperand !== ''){
-        this.compute();
-    }
-    this.operation = operation;
-    this.previousOperand=this.currentOperand;
-    this.currentOperand=''
-   }
-
-
-   compute(){
-   let computation;
-
-   let prev = parseFloat(this.previousOperand);
-   let current = parseFloat(this.currentOperand);
-
-   switch(this.operation){
-       case '+':
-           computation = prev + current
-           break;
-
-        case '-':
-            computation = prev -current
-            break;
-        
-        case 'x':
-            computation = prev * current
-            break;
-
-        case '/':
-            computation = prev /current
-            break;
-        default:
-            return;
-   }
-
-   this.currentOperand=computation;
-   this.operation=undefined;
-   this.previousOperand=''
-}
-
-
-   updateText(){
-       this.currentTextElement.innerText= this.currentOperand.toLocaleString("en-US");
-       if(this.operation != null){
-           this.previousTextElement.innerText=`${this.previousOperand} ${this.operation}`;
-           
-       }
-       else{
-           this.previousTextElement.innerText=''
-       }
-    
-   }
-  
-  }
-
-
 let numbersBtn = document.querySelectorAll('[data-number]');
 let operationsBtn = document.querySelectorAll('[data-operation]');
 let delBtn = document.querySelector('[data-delete]');
+let bodyTheme = document.querySelector('[bodyTheme]')
 let allClearBtn = document.querySelector('[data-allClear]');
 let equalsBtn= document.querySelector('[data-equals]');
 let previousTextElement = document.querySelector('[data-previous]');
@@ -102,6 +20,32 @@ let btnHovers = document.querySelectorAll('[btn_hover]');
 let title = document.querySelector('.title');
 let createDelHover = document.querySelector('.delt');
 
+let screen = document.querySelector('#display');
+let calButtons = Array.from(document.querySelectorAll('[adapt]'));
+
+calButtons.map(button=>{
+    button.addEventListener('click',(e)=>{
+       switch(e.target.innerText){
+           case 'RESET':
+               screen.innerText=""
+               break;
+            case 'DEL':
+                screen.innerText = screen.innerText.slice(0,-1)
+                break;
+            case '=':
+                try {
+                screen.innerText = eval(screen.innerText);
+                    
+                } catch (error) {
+                    screen.innerText='Error!'
+                }
+                break;    
+           default:
+               screen.innerText +=e.target.innerText
+       }
+    })
+})
+
 
 
 
@@ -109,47 +53,13 @@ let moveBy=1.3;
 let set=0;
 
 
-let calculator = new Calculator(previousTextElement,currentTextElement)
-
-
-numbersBtn.forEach(item=>{
-    item.addEventListener('click',()=>{
-         calculator.appendText(item.innerHTML);
-         calculator.updateText();
-        
-    })
-})
-
-
-operationsBtn.forEach(operation=>{
-    operation.addEventListener('click',()=>{
-        calculator.chooseOperation(operation.innerHTML);
-        calculator.updateText();
-    })
-})
-
-equalsBtn.addEventListener('click',()=>{
-    calculator.compute();
-    calculator.updateText();
-})
-
-allClearBtn.addEventListener('click',()=>{
-    calculator.clear();
-    calculator.updateText();
-})
-
-
-delBtn.addEventListener('click',()=>{
-    calculator.delete();
-    calculator.updateText();
-})
-
 
 themeContainer.addEventListener('click',(e)=>{
 
     if(e.offsetX <= 11 && e.offsetX >=4){
         
-        document.body.style.backgroundColor="#3a4663";
+        // document.body.style.backgroundColor="#3a4663";
+        bodyTheme.classList.add('defaultColor');
             //    themeBtn.style.backgroundColor="#d03f2f";
               ball.style.left= set +'rem';
               ball.style.backgroundColor="#d03f2f"
@@ -184,7 +94,12 @@ themeContainer.addEventListener('click',(e)=>{
 
     else if(e.offsetX <=43 && e.offsetX >=30){
 
-                document.body.style.backgroundColor="#e6e6e6";
+        bodyTheme.classList.add('secondTheme');
+        bodyTheme.classList.remove('defaultColor');
+        bodyTheme.classList.remove('thirdTheme');
+        
+        
+                // document.body.style.backgroundColor="#e6e6e6";
                 // themeBtn.style.backgroundColor="#FF8A38";
                 ball.style.left= moveBy +'rem';
                 ball.style.backgroundColor="#FF8A38"
@@ -223,7 +138,10 @@ themeContainer.addEventListener('click',(e)=>{
            }
 
     else if(e.offsetX <=62 && e.offsetX >=49){
-        document.body.style.backgroundColor="#180c2a";
+        bodyTheme.classList.remove('defaultColor');
+        bodyTheme.classList.remove('secondTheme');
+        bodyTheme.classList.add('thirdTheme');
+        // document.body.style.backgroundColor="#180c2a";
         // themeBtn.style.backgroundColor="#60dfd0";
         ball.style.left=moveBy+ 1.5+ 'rem';
         ball.style.backgroundColor='#60dfd0'

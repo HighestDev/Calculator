@@ -6,8 +6,8 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="reload()">
 
+<body onload="reload()" bodyTheme class="defaultColor secondTheme thirdTheme">
     <div class="calculator-container active">
         <div class="banner">
           <h3  data-color class="title">calc</h3>
@@ -29,23 +29,23 @@
 
 
         <div class="calculator_output" id="showcase">
-            <p data-color data-previous class="previous_output"></p>
-            <p data-color data-current class="current_output"></p>
+            <!-- <p data-color data-previous class="previous_output"></p> -->
+            <p data-color data-current class="current_output" id="display"></p>
         </div>
 
          <div class="calculator_keys">
              <div class="btn_group">
-                <button btn_hover edit_button  all_button  data-number class="align1 seven">7</button>
-                <button btn_hover edit_button all_button  data-number class="base2 eight">8</button>
-                <button btn_hover edit_button  all_button data-number class="base3 nine">9</button>
-                <button  all_button  data-delete class="end1 delBtn delt">DEL</button>
+                <button adapt btn_hover edit_button  all_button  data-number class="align1 seven">7</button>
+                <button adapt btn_hover edit_button all_button  data-number class="base2 eight">8</button>
+                <button adapt btn_hover edit_button  all_button data-number class="base3 nine">9</button>
+                <button adapt  all_button  data-delete class="end1 delBtn delt" revamp>DEL</button>
              </div>
 
              <div class="btn_group groupin">
-                <button btn_hover edit_button all_button data-number class="align1 four">4</button>
-                <button btn_hover edit_button all_button  data-number class="base2 five">5</button>
-                <button btn_hover edit_button all_button data-number class="base3 six">6</button>
-                <button btn_hover edit_button all_button  data-operation class="end1 plus">+</button>
+                <button adapt btn_hover edit_button all_button data-number class="align1 four">4</button>
+                <button adapt btn_hover edit_button all_button  data-number class="base2 five">5</button>
+                <button adapt btn_hover edit_button all_button data-number class="base3 six">6</button>
+                <button adapt btn_hover edit_button all_button  data-operation class="end1 plus">+</button>
              </div>
 
            
@@ -53,24 +53,24 @@
          
 
              <div class="btn_group groupin">
-                <button btn_hover edit_button all_button data-number  class="align1 one">1</button>
-                <button btn_hover edit_button all_button data-number class="base2 two">2</button>
-                <button btn_hover edit_button all_button data-number   class="base3 three">3</button>
-                <button btn_hover edit_button all_button data-operation class="end1 takeaway">-</button>
+                <button adapt btn_hover edit_button all_button data-number  class="align1 one">1</button>
+                <button adapt btn_hover edit_button all_button data-number class="base2 two">2</button>
+                <button adapt btn_hover edit_button all_button data-number   class="base3 three">3</button>
+                <button adapt btn_hover edit_button all_button data-operation class="end1 takeaway" id="substract">-</button>
              </div>
 
             
 
              <div class="btn_group groupin">
-                <button btn_hover edit_button  all_button data-number class="align1 dot">.</button>
-                <button btn_hover edit_button  all_button data-number class="base2 zero">0</button>
-                <button btn_hover edit_button all_button  data-operation class="base3 slash">/</button>
-                <button btn_hover edit_button  all_button data-operation class="end1 times">x</button>
+                <button adapt btn_hover edit_button  all_button data-number class="align1 dot">.</button>
+                <button adapt btn_hover edit_button  all_button data-number class="base2 zero">0</button>
+                <button adapt btn_hover edit_button all_button  data-operation class="base3 slash">/</button>
+                <button adapt btn_hover edit_button  all_button data-operation class="end1 times">x</button>
              </div>
 
              <div class="final_bottom">
-                <button setcolor  data-allClear class="span-two resetBtn">reset</button>
-                <button data-equals class="span-three minus">=</button>
+                <button adapt  setcolor  data-allClear class="span-two resetBtn">reset</button>
+                <button adapt  data-equals class="span-three minus">=</button>
              </div>
 
          </div>
